@@ -11,7 +11,7 @@ public class Ahorcado {
 	private char[] mascara = new char[20];
 	private char[] letrasUsadas = new char[27];
 
-	
+	//CONSTRUCTOR QUE ESCOGE UNA PALABRA ALEATORIA Y GENERA LA MÁSCARA.
 	
 	public Ahorcado() {
 		palabra = palabras[generador.nextInt(9)];
@@ -21,6 +21,8 @@ public class Ahorcado {
 		}
 	}
 	
+	//CONSTRUCTOR QUE COGE UNA PALABRA A PETICIÓN DEL USUARIO, Y GENERA LA MÁSCARA PARA ESA PALABRA.
+	
 	public Ahorcado(int noPalabra) {
 		palabra = palabras[noPalabra];
 		
@@ -29,11 +31,15 @@ public class Ahorcado {
 		}
 	}
 	
+	//IMPRIME LA MÁSCARA
+	
 	public void printMascara() {
 		for(int i = 0;i<palabra.length();i++) {
 			System.out.print(mascara[i]);
 		}
 	}
+	
+	//IMPRIME LAS LETRAS YA USADAS.
 	
 	public void printLetrasUsadas() {
 		for (int i = 0;i<letrasUsadas.length-1;i++) {
@@ -41,13 +47,19 @@ public class Ahorcado {
 		}
 	}
 	
+	//CUANDO EL USUARIO ACIERTA UNA O VARIAS LETRAS, MUESTRA LAS LETRAS EN LA MASCARA.
+	
 	public void descubreMascara(char caracter, int posicion) {
 		mascara[posicion] = caracter;
 	}
 	
+	//DEVUELVE LA PALABRA ESCOGIDA.
+	
 	public String getPalabra() {
 		return this.palabra;
 	}
+	
+	//SE ENCARGA DE COMPROBAR SI LA LETRA ESPECIFICADA ESTÁ EN LA PALABRA O NO.
 	
 	public boolean usaLetra(char letra) {
 		
